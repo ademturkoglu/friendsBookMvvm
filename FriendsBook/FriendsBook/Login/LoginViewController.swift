@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
 
     @IBOutlet weak var errorLabel: UILabel! {
         didSet {
@@ -29,14 +29,23 @@ class ViewController: UIViewController {
     @IBOutlet weak var passwordFieldView: UIView!
     @IBOutlet weak var hideButton: UIButton!
     
+    private var viewModel = LoginViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         userNameTextField.delegate = self
         passwordTextField.delegate = self
         view.backgroundColor = UIColor.white
         hideKeyboard()
+        setupViewModel()
 
         // Do any additional setup after loading the view.
+    }
+    
+    private func setupViewModel() {
+        viewModel.changeHandler = { [unowned self] change in
+            self.viewModelStateChanged(change: change)
+        }
     }
     
     @IBAction func hideButtonAction(_ sender: Any) {
@@ -50,6 +59,9 @@ class ViewController: UIViewController {
                }
     }
     
+    @IBAction func loginButtonTapped(_ sender: Any) {
+        viewModel.login(userName: userNameTextField.text, password: passwordTextField.text)
+    }
     func hideKeyboard(){
         let tab:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tab)
@@ -67,19 +79,24 @@ class ViewController: UIViewController {
             passwordTextField.becomeFirstResponder()
         } else{
             textField.resignFirstResponder()
-            //loginButtonAction(self)
-            loginButton.isUserInteractionEnabled = false
+            viewModel.login(userName: userNameTextField.text, password: passwordTextField.text)
             
         }
         return true
     }
+    
+    func showError(){
+        self.userNameFieldView.backgroundColor = UIColor.scarlet
+        self.passwordFieldView.backgroundColor = UIColor.scarlet
+        self.loginButton.isUserInteractionEnabled = true
+        self.errorLabel.textColor = UIColor.scarlet
+        self.errorLabel.isHidden = false
+    }
 
 }
 
-extension ViewController: UITextFieldDelegate {
+extension LoginViewController: UITextFieldDelegate {
    
-
-    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == userNameTextField {
             userNameFieldView.backgroundColor = UIColor.marineBlue
@@ -99,6 +116,29 @@ extension ViewController: UITextFieldDelegate {
         }
     }
     
+}
+
+extension LoginViewController {
+ 
     
+    func routeToFriendsList() {
+       // let storyboard = UIStoryboard(name: "TaskDetail", bundle: nil)
+        //if let destinationVC = storyboard.instantiateViewController(withIdentifier: "TaskDetailViewController") as? TaskDetailViewController {
+          //  destinationVC.model = model
+         //   self.show(destinationVC, sender: nil)
+     //   }
+    }
     
+
+    private func viewModelStateChanged(change: LoginViewState.Change){
+        switch change {
+        case let .fetchState(_): break
+              //  fetching ? showIndicator() : hideIndicator()
+        case let .loginError(error: error):
+            print(error ?? "error")
+            showError()
+        case let .loginSucces: break
+            // Route to list
+        }
+    }
 }
