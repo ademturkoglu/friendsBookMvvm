@@ -21,20 +21,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="friends" translatesAutoresizingMaskIntoConstraints="NO" id="giC-sC-d89">
-                                <rect key="frame" x="157" y="185" width="100" height="100"/>
+                                <rect key="frame" x="157" y="94" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="G5F-73-hJA"/>
                                     <constraint firstAttribute="width" constant="100" id="fLu-yO-6WX"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgm-VU-gO5">
-                                <rect key="frame" x="40" y="311" width="51" height="31.5"/>
+                                <rect key="frame" x="40" y="220" width="51" height="31.5"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="24"/>
                                 <color key="textColor" red="0.67450980390000004" green="0.67450980390000004" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dvs-3R-Cv5" userLabel="Form View">
-                                <rect key="frame" x="20" y="348.5" width="374" height="199.5"/>
+                                <rect key="frame" x="20" y="257.5" width="374" height="199.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DUe-u6-xEO">
                                         <rect key="frame" x="20" y="15" width="68.5" height="21"/>
@@ -79,7 +79,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I5b-eU-CrH">
-                                        <rect key="frame" x="324" y="116" width="30" height="26"/>
+                                        <rect key="frame" x="324" y="116.5" width="30" height="26"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="12"/>
                                         <state key="normal" title="show">
                                             <color key="titleColor" red="0.0078431372550000003" green="0.2470588235" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -157,7 +157,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lhH-sa-cuY" userLabel="login" customClass="LoginButton" customModule="FriendsBook" customModuleProvider="target">
-                                <rect key="frame" x="106" y="608" width="202" height="54"/>
+                                <rect key="frame" x="106" y="517" width="202" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="s3A-Bc-PU4"/>
                                     <constraint firstAttribute="width" constant="202" id="sz2-9u-YG9"/>
@@ -178,10 +178,10 @@
                             <constraint firstItem="lhH-sa-cuY" firstAttribute="centerX" secondItem="pFl-sK-6ux" secondAttribute="centerX" id="EFa-ZC-Ypf"/>
                             <constraint firstItem="Dvs-3R-Cv5" firstAttribute="top" secondItem="xgm-VU-gO5" secondAttribute="bottom" constant="6" id="Sxh-wJ-0fY"/>
                             <constraint firstItem="giC-sC-d89" firstAttribute="centerX" secondItem="pFl-sK-6ux" secondAttribute="centerX" id="T3N-UV-k02"/>
+                            <constraint firstItem="giC-sC-d89" firstAttribute="top" secondItem="r0d-6z-fHt" secondAttribute="top" constant="50" id="YsT-qr-FVd"/>
                             <constraint firstItem="xgm-VU-gO5" firstAttribute="leading" secondItem="r0d-6z-fHt" secondAttribute="leading" constant="40" id="kYE-Dt-UbR"/>
                             <constraint firstItem="xgm-VU-gO5" firstAttribute="top" secondItem="giC-sC-d89" secondAttribute="bottom" constant="26" id="qyW-oP-H9I"/>
                             <constraint firstItem="lhH-sa-cuY" firstAttribute="top" secondItem="Dvs-3R-Cv5" secondAttribute="bottom" constant="60" id="srQ-j2-pqB"/>
-                            <constraint firstItem="Dvs-3R-Cv5" firstAttribute="centerY" secondItem="pFl-sK-6ux" secondAttribute="centerY" id="tMf-X9-v4L"/>
                             <constraint firstItem="Dvs-3R-Cv5" firstAttribute="leading" secondItem="r0d-6z-fHt" secondAttribute="leading" constant="20" id="y9q-CR-sDF"/>
                             <constraint firstItem="Dvs-3R-Cv5" firstAttribute="centerX" secondItem="pFl-sK-6ux" secondAttribute="centerX" id="yZB-yf-2wO"/>
                         </constraints>

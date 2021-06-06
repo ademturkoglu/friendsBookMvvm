@@ -122,11 +122,13 @@ extension LoginViewController {
  
     
     func routeToFriendsList() {
-       // let storyboard = UIStoryboard(name: "TaskDetail", bundle: nil)
-        //if let destinationVC = storyboard.instantiateViewController(withIdentifier: "TaskDetailViewController") as? TaskDetailViewController {
-          //  destinationVC.model = model
-         //   self.show(destinationVC, sender: nil)
-     //   }
+        let storyboard = UIStoryboard(name: "FriendsList", bundle: nil)
+        if let destinationVC = storyboard.instantiateViewController(withIdentifier: "FriendListViewController") as? FriendsListViewController {
+           
+            let navController = UINavigationController(rootViewController: destinationVC)
+            navController.modalPresentationStyle = .fullScreen
+            self.present(navController, animated: true, completion: nil)
+        }
     }
     
 
@@ -137,8 +139,8 @@ extension LoginViewController {
         case let .loginError(error: error):
             print(error ?? "error")
             showError()
-        case let .loginSucces: break
-            // Route to list
+        case let .loginSucces:
+            routeToFriendsList()
         }
     }
 }

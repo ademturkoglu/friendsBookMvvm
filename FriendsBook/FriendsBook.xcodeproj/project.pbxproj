@@ -10,6 +10,16 @@
 		3BBF86E4266B8F030080E39E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF86E3266B8F030080E39E /* LoginViewModel.swift */; };
 		3BBF86E7266B911B0080E39E /* LoginViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF86E6266B911B0080E39E /* LoginViewState.swift */; };
 		3BBF86EA266B918F0080E39E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF86E9266B918F0080E39E /* User.swift */; };
+		3BBF86F0266C2E4B0080E39E /* FriendsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BBF86EF266C2E4B0080E39E /* FriendsList.storyboard */; };
+		3BBF86F4266C386A0080E39E /* FriendListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF86F3266C386A0080E39E /* FriendListTableViewCell.swift */; };
+		3BBF86F7266C3B7F0080E39E /* FriendsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF86F6266C3B7F0080E39E /* FriendsListViewController.swift */; };
+		3BBF86FA266C3CDC0080E39E /* FriendsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF86F9266C3CDC0080E39E /* FriendsListViewModel.swift */; };
+		3BBF86FD266C3CF30080E39E /* FriendsListViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF86FC266C3CF30080E39E /* FriendsListViewState.swift */; };
+		3BBF8701266C3DB40080E39E /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF8700266C3DB40080E39E /* Person.swift */; };
+		3BBF8704266CD47B0080E39E /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF8703266CD47B0080E39E /* Service.swift */; };
+		3BBF870C266CF17F0080E39E /* FriendDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BBF870B266CF17F0080E39E /* FriendDetail.storyboard */; };
+		3BBF870F266CFE7B0080E39E /* FriendDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF870E266CFE7B0080E39E /* FriendDetailViewController.swift */; };
+		3BBF8712266D0B480080E39E /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF8711266D0B480080E39E /* StringExtension.swift */; };
 		93164763266ABE25006E53F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93164762266ABE25006E53F1 /* AppDelegate.swift */; };
 		93164765266ABE25006E53F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93164764266ABE25006E53F1 /* SceneDelegate.swift */; };
 		93164767266ABE25006E53F1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93164766266ABE25006E53F1 /* LoginViewController.swift */; };
@@ -24,6 +34,16 @@
 		3BBF86E3266B8F030080E39E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		3BBF86E6266B911B0080E39E /* LoginViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewState.swift; sourceTree = "<group>"; };
 		3BBF86E9266B918F0080E39E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		3BBF86EF266C2E4B0080E39E /* FriendsList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FriendsList.storyboard; sourceTree = "<group>"; };
+		3BBF86F3266C386A0080E39E /* FriendListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListTableViewCell.swift; sourceTree = "<group>"; };
+		3BBF86F6266C3B7F0080E39E /* FriendsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListViewController.swift; sourceTree = "<group>"; };
+		3BBF86F9266C3CDC0080E39E /* FriendsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListViewModel.swift; sourceTree = "<group>"; };
+		3BBF86FC266C3CF30080E39E /* FriendsListViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListViewState.swift; sourceTree = "<group>"; };
+		3BBF8700266C3DB40080E39E /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		3BBF8703266CD47B0080E39E /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		3BBF870B266CF17F0080E39E /* FriendDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FriendDetail.storyboard; sourceTree = "<group>"; };
+		3BBF870E266CFE7B0080E39E /* FriendDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDetailViewController.swift; sourceTree = "<group>"; };
+		3BBF8711266D0B480080E39E /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		9316475F266ABE24006E53F1 /* FriendsBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FriendsBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93164762266ABE25006E53F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93164764266ABE25006E53F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +67,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3BBF86EE266C225A0080E39E /* FriendsList */ = {
+			isa = PBXGroup;
+			children = (
+				3BBF86F2266C38330080E39E /* Cell */,
+				3BBF86EF266C2E4B0080E39E /* FriendsList.storyboard */,
+				3BBF86F6266C3B7F0080E39E /* FriendsListViewController.swift */,
+				3BBF86F9266C3CDC0080E39E /* FriendsListViewModel.swift */,
+				3BBF86FC266C3CF30080E39E /* FriendsListViewState.swift */,
+			);
+			path = FriendsList;
+			sourceTree = "<group>";
+		};
+		3BBF86F2266C38330080E39E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3BBF86F3266C386A0080E39E /* FriendListTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		3BBF86FF266C3D9A0080E39E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3BBF8700266C3DB40080E39E /* Person.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3BBF870A266CF0D10080E39E /* FriendDetail */ = {
+			isa = PBXGroup;
+			children = (
+				3BBF870B266CF17F0080E39E /* FriendDetail.storyboard */,
+				3BBF870E266CFE7B0080E39E /* FriendDetailViewController.swift */,
+			);
+			path = FriendDetail;
+			sourceTree = "<group>";
+		};
 		93164756266ABE24006E53F1 = {
 			isa = PBXGroup;
 			children = (
@@ -66,12 +123,17 @@
 		93164761266ABE24006E53F1 /* FriendsBook */ = {
 			isa = PBXGroup;
 			children = (
+				3BBF870A266CF0D10080E39E /* FriendDetail */,
+				3BBF86FF266C3D9A0080E39E /* Model */,
+				3BBF86EE266C225A0080E39E /* FriendsList */,
 				93164780266ADC9E006E53F1 /* Login */,
 				9316477D266AD2A2006E53F1 /* System */,
 				93164762266ABE25006E53F1 /* AppDelegate.swift */,
 				93164770266ABE29006E53F1 /* Info.plist */,
 				93164777266ABF43006E53F1 /* LoginButton.swift */,
 				9316477A266AC1FF006E53F1 /* UIColorAddition.swift */,
+				3BBF8703266CD47B0080E39E /* Service.swift */,
+				3BBF8711266D0B480080E39E /* StringExtension.swift */,
 			);
 			path = FriendsBook;
 			sourceTree = "<group>";
@@ -155,7 +217,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BBF86F0266C2E4B0080E39E /* FriendsList.storyboard in Resources */,
 				9316476F266ABE29006E53F1 /* LaunchScreen.storyboard in Resources */,
+				3BBF870C266CF17F0080E39E /* FriendDetail.storyboard in Resources */,
 				9316476C266ABE29006E53F1 /* Assets.xcassets in Resources */,
 				9316476A266ABE25006E53F1 /* Main.storyboard in Resources */,
 			);
@@ -168,13 +232,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BBF86FD266C3CF30080E39E /* FriendsListViewState.swift in Sources */,
+				3BBF8704266CD47B0080E39E /* Service.swift in Sources */,
+				3BBF86F7266C3B7F0080E39E /* FriendsListViewController.swift in Sources */,
+				3BBF86FA266C3CDC0080E39E /* FriendsListViewModel.swift in Sources */,
+				3BBF8712266D0B480080E39E /* StringExtension.swift in Sources */,
 				93164767266ABE25006E53F1 /* LoginViewController.swift in Sources */,
 				3BBF86E7266B911B0080E39E /* LoginViewState.swift in Sources */,
 				93164778266ABF43006E53F1 /* LoginButton.swift in Sources */,
 				3BBF86E4266B8F030080E39E /* LoginViewModel.swift in Sources */,
+				3BBF870F266CFE7B0080E39E /* FriendDetailViewController.swift in Sources */,
 				93164763266ABE25006E53F1 /* AppDelegate.swift in Sources */,
 				3BBF86EA266B918F0080E39E /* User.swift in Sources */,
 				9316477B266AC1FF006E53F1 /* UIColorAddition.swift in Sources */,
+				3BBF8701266C3DB40080E39E /* Person.swift in Sources */,
+				3BBF86F4266C386A0080E39E /* FriendListTableViewCell.swift in Sources */,
 				93164765266ABE25006E53F1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
