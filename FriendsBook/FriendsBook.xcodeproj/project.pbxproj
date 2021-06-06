@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3BB6A31F266D5CD800381CE4 /* FriendLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB6A31E266D5CD800381CE4 /* FriendLocationViewController.swift */; };
+		3BB6A322266D6E1D00381CE4 /* PersonAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB6A321266D6E1D00381CE4 /* PersonAddressModel.swift */; };
 		3BBF86E4266B8F030080E39E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF86E3266B8F030080E39E /* LoginViewModel.swift */; };
 		3BBF86E7266B911B0080E39E /* LoginViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF86E6266B911B0080E39E /* LoginViewState.swift */; };
 		3BBF86EA266B918F0080E39E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF86E9266B918F0080E39E /* User.swift */; };
@@ -31,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3BB6A31E266D5CD800381CE4 /* FriendLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendLocationViewController.swift; sourceTree = "<group>"; };
+		3BB6A321266D6E1D00381CE4 /* PersonAddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonAddressModel.swift; sourceTree = "<group>"; };
 		3BBF86E3266B8F030080E39E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		3BBF86E6266B911B0080E39E /* LoginViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewState.swift; sourceTree = "<group>"; };
 		3BBF86E9266B918F0080E39E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -91,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				3BBF8700266C3DB40080E39E /* Person.swift */,
+				3BB6A321266D6E1D00381CE4 /* PersonAddressModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -100,6 +105,7 @@
 			children = (
 				3BBF870B266CF17F0080E39E /* FriendDetail.storyboard */,
 				3BBF870E266CFE7B0080E39E /* FriendDetailViewController.swift */,
+				3BB6A31E266D5CD800381CE4 /* FriendLocationViewController.swift */,
 			);
 			path = FriendDetail;
 			sourceTree = "<group>";
@@ -237,9 +243,11 @@
 				3BBF86F7266C3B7F0080E39E /* FriendsListViewController.swift in Sources */,
 				3BBF86FA266C3CDC0080E39E /* FriendsListViewModel.swift in Sources */,
 				3BBF8712266D0B480080E39E /* StringExtension.swift in Sources */,
+				3BB6A322266D6E1D00381CE4 /* PersonAddressModel.swift in Sources */,
 				93164767266ABE25006E53F1 /* LoginViewController.swift in Sources */,
 				3BBF86E7266B911B0080E39E /* LoginViewState.swift in Sources */,
 				93164778266ABF43006E53F1 /* LoginButton.swift in Sources */,
+				3BB6A31F266D5CD800381CE4 /* FriendLocationViewController.swift in Sources */,
 				3BBF86E4266B8F030080E39E /* LoginViewModel.swift in Sources */,
 				3BBF870F266CFE7B0080E39E /* FriendDetailViewController.swift in Sources */,
 				93164763266ABE25006E53F1 /* AppDelegate.swift in Sources */,

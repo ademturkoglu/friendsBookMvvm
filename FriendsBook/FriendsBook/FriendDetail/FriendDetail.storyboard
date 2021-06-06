@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -29,6 +30,9 @@
                                 <state key="normal" title=" call" image="callwhite">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="downCallButtonTapped:" destination="iEM-EA-NoW" eventType="touchUpInside" id="LE4-Z0-ppP"/>
+                                </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L9D-a5-BcW">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
@@ -319,6 +323,35 @@
             </objects>
             <point key="canvasLocation" x="2369.5652173913045" y="-302.67857142857139"/>
         </scene>
+        <!--Friend Location View Controller-->
+        <scene sceneID="mvb-CG-fZl">
+            <objects>
+                <viewController storyboardIdentifier="FriendLocationViewController" id="DeM-pT-iam" customClass="FriendLocationViewController" customModule="FriendsBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="J9i-eb-iGi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="AUf-b7-Fdj">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bkC-eb-tJr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bkC-eb-tJr" firstAttribute="trailing" secondItem="AUf-b7-Fdj" secondAttribute="trailing" id="HkY-OI-p54"/>
+                            <constraint firstItem="AUf-b7-Fdj" firstAttribute="leading" secondItem="bkC-eb-tJr" secondAttribute="leading" id="KJf-k1-Ce6"/>
+                            <constraint firstItem="AUf-b7-Fdj" firstAttribute="top" secondItem="bkC-eb-tJr" secondAttribute="top" id="Uht-H1-CgQ"/>
+                            <constraint firstItem="bkC-eb-tJr" firstAttribute="bottom" secondItem="AUf-b7-Fdj" secondAttribute="bottom" id="jaJ-UL-Vsq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="AUf-b7-Fdj" id="C2g-Vw-Kr2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wiK-rB-PWp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3210" y="-330"/>
+        </scene>
     </scenes>
     <resources>
         <image name="avatar" width="1280" height="1280"/>
@@ -326,5 +359,8 @@
         <image name="callwhite" width="16" height="16"/>
         <image name="copy" width="12" height="13"/>
         <image name="message" width="25" height="23"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

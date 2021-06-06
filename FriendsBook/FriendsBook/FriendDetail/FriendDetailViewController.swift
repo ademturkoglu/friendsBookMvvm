@@ -79,7 +79,14 @@ class FriendDetailViewController: UIViewController {
          
         }
     }
-    @IBOutlet weak var adressStackView: UIStackView!
+    
+    @IBOutlet weak var adressStackView: UIStackView!{
+        didSet {
+            let gestureRecognizerAddress = UITapGestureRecognizer(target: self, action: #selector(addressAction))
+            adressStackView.addGestureRecognizer(gestureRecognizerAddress)
+        }
+       
+    }
     var model: Person!
 
     override func viewDidLoad() {
@@ -113,4 +120,19 @@ class FriendDetailViewController: UIViewController {
         model.phone?.makeAMessage()
     }
     
+    @IBAction func downCallButtonTapped(_ sender: Any) {
+        model.phone?.makeACall()
+    }
+    
+    @objc func addressAction(){
+        routeToMapView(model: model)
+    }
+    
+    func routeToMapView(model: Person) {
+        let storyboard = UIStoryboard(name: "FriendDetail", bundle: nil)
+        if let destinationVC = storyboard.instantiateViewController(withIdentifier: "FriendLocationViewController") as? FriendLocationViewController {
+            destinationVC.person = model
+            self.show(destinationVC, sender: nil)
+        }
+    }
 }
