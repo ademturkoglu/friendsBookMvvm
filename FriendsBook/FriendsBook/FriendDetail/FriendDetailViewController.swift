@@ -7,6 +7,7 @@
 
 import UIKit
 import Foundation
+import SafariServices
 
 class FriendDetailViewController: UIViewController {
     
@@ -58,7 +59,13 @@ class FriendDetailViewController: UIViewController {
             websiteLabel.text = model.website
         }
     }
-    @IBOutlet weak var websiteStackView: UIStackView!
+    @IBOutlet weak var websiteStackView: UIStackView! {
+        didSet {
+            let gestureRecognizerWebsite = UITapGestureRecognizer(target: self, action: #selector(websiteAction))
+            websiteStackView.addGestureRecognizer(gestureRecognizerWebsite)
+        }
+       
+    }
     @IBOutlet weak var companyNameLabel: UILabel! {
         didSet {
             companyNameLabel.text = model.company?.name
@@ -126,6 +133,13 @@ class FriendDetailViewController: UIViewController {
     
     @objc func addressAction(){
         routeToMapView(model: model)
+    }
+    
+    @objc func websiteAction(){
+        if let url = URL(string: "https://" + model.website!) {
+            let svc = SFSafariViewController(url: url)
+            present(svc, animated: true, completion: nil)
+        }
     }
     
     func routeToMapView(model: Person) {
