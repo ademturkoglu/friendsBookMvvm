@@ -37,7 +37,3 @@ struct Company : Codable {
     var bs: String?
 
 }
-
-
-
-

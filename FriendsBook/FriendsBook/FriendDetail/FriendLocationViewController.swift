@@ -9,33 +9,26 @@ import UIKit
 import MapKit
 
 class FriendLocationViewController: UIViewController {
-
     @IBOutlet weak var mapView: MKMapView!
-    
     var location: Geo?
-    
-    var person: Person!{
+    var person: Person! {
         didSet {
             location = person.address?.geo
         }
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let lat = Double(location?.lat ?? "0")
-        let lng = Double(location?.lng ?? "0")
-        let initialLocation = CLLocation(latitude: lat!, longitude: lng!)
-        let initialLocation2D = CLLocationCoordinate2D(latitude: lat!, longitude: lng!)
+        let latValue = Double(location?.lat ?? "0")
+        let lngValue = Double(location?.lng ?? "0")
+        let initialLocation = CLLocation(latitude: latValue!, longitude: lngValue!)
+        let initialLocation2D = CLLocationCoordinate2D(latitude: latValue!, longitude: lngValue!)
         mapView.centerToLocation(initialLocation)
         let personAdress = PersonAddress(
             title: person.name,
             locationName: person.address?.zipcode,
           coordinate: initialLocation2D)
         mapView.addAnnotation(personAdress)
-      
-       
     }
-
 }
 
 private extension MKMapView {

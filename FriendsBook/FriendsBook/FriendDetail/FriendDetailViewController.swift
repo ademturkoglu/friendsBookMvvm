@@ -10,23 +10,21 @@ import Foundation
 import SafariServices
 
 class FriendDetailViewController: UIViewController {
-    
     @IBOutlet weak var downCallButton: LoginButton!
-    @IBOutlet weak var avatarImage: UIImageView!{
+    @IBOutlet weak var avatarImage: UIImageView! {
         didSet {
             avatarImage.layer.masksToBounds = true
             avatarImage.layer.borderWidth = 2
             avatarImage.layer.borderColor = UIColor.marineBlue.cgColor
-        
         }
     }
-    @IBOutlet weak var usernameLabel: UILabel!{
-        didSet{
+    @IBOutlet weak var usernameLabel: UILabel! {
+        didSet {
             usernameLabel.text = model.username
         }
     }
     @IBOutlet weak var phoneLabel: UILabel! {
-        didSet{
+        didSet {
             phoneLabel.text = model.phone
         }
     }
@@ -35,7 +33,6 @@ class FriendDetailViewController: UIViewController {
             let gestureRecognizerPhone = UITapGestureRecognizer(target: self, action: #selector(copyAction))
             phoneStackView.addGestureRecognizer(gestureRecognizerPhone)
         }
-       
     }
     @IBOutlet weak var nameSurnameLabel: UILabel! {
         didSet {
@@ -49,10 +46,9 @@ class FriendDetailViewController: UIViewController {
     }
     @IBOutlet weak var emailStack: UIStackView! {
         didSet {
-            let gestureRecognizerEmail = UITapGestureRecognizer(target: self, action: #selector(emailActionForLabel))
-            emailStack.addGestureRecognizer(gestureRecognizerEmail)
+            let recognizerEmail = UITapGestureRecognizer(target: self, action: #selector(emailActionForLabel))
+            emailStack.addGestureRecognizer(recognizerEmail)
         }
-       
     }
     @IBOutlet weak var websiteLabel: UILabel! {
         didSet {
@@ -61,10 +57,9 @@ class FriendDetailViewController: UIViewController {
     }
     @IBOutlet weak var websiteStackView: UIStackView! {
         didSet {
-            let gestureRecognizerWebsite = UITapGestureRecognizer(target: self, action: #selector(websiteAction))
-            websiteStackView.addGestureRecognizer(gestureRecognizerWebsite)
+            let recognizerWebsite = UITapGestureRecognizer(target: self, action: #selector(websiteAction))
+            websiteStackView.addGestureRecognizer(recognizerWebsite)
         }
-       
     }
     @IBOutlet weak var companyNameLabel: UILabel! {
         didSet {
@@ -80,19 +75,16 @@ class FriendDetailViewController: UIViewController {
                 adressLabel.text! += suite + " "
                 guard let city = adress.city else { return }
                 adressLabel.text! += city + " "
-                guard let zip = adress.zipcode else { return }
-                adressLabel.text! += zip
+                guard let zipCode = adress.zipcode else { return }
+                adressLabel.text! += zipCode
             }
-         
         }
     }
-    
-    @IBOutlet weak var adressStackView: UIStackView!{
+    @IBOutlet weak var adressStackView: UIStackView! {
         didSet {
-            let gestureRecognizerAddress = UITapGestureRecognizer(target: self, action: #selector(addressAction))
-            adressStackView.addGestureRecognizer(gestureRecognizerAddress)
+            let recognizerAddress = UITapGestureRecognizer(target: self, action: #selector(addressAction))
+            adressStackView.addGestureRecognizer(recognizerAddress)
         }
-       
     }
     var model: Person!
 
@@ -101,19 +93,18 @@ class FriendDetailViewController: UIViewController {
         self.view.bringSubviewToFront(downCallButton)
         // Do any additional setup after loading the view.
     }
-    
-    @objc func emailActionForLabel(){
-        if let url = URL(string: "mailto:\(emailLabel.text!)") {
-            UIApplication.shared.open(url)
+    @objc func emailActionForLabel() {
+        if let urlMail = URL(string: "mailto:\(emailLabel.text!)") {
+            UIApplication.shared.open(urlMail)
         }
     }
-    
-    @objc func copyAction(){
+    @objc func copyAction() {
         UIPasteboard.general.string = phoneLabel.text
-        let succesAlert = UIAlertController(title: "Copied", message: nil, preferredStyle: UIAlertController.Style.alert)
+        let succesAlert = UIAlertController(title: "Copied",
+                                            message: nil, preferredStyle: UIAlertController.Style.alert)
         self.present(succesAlert, animated: true, completion: nil)
         let when = DispatchTime.now() + 1
-        DispatchQueue.main.asyncAfter(deadline: when){
+        DispatchQueue.main.asyncAfter(deadline: when) {
             // your code with delay
             succesAlert.dismiss(animated: true, completion: nil)
         }
@@ -122,29 +113,25 @@ class FriendDetailViewController: UIViewController {
     @IBAction func upCallButtonTapped(_ sender: Any) {
         model.phone?.makeACall()
     }
-    
     @IBAction func messageButtonTapped(_ sender: Any) {
         model.phone?.makeAMessage()
     }
-    
     @IBAction func downCallButtonTapped(_ sender: Any) {
         model.phone?.makeACall()
     }
-    
-    @objc func addressAction(){
+    @objc func addressAction() {
         routeToMapView(model: model)
     }
-    
-    @objc func websiteAction(){
-        if let url = URL(string: "https://" + model.website!) {
-            let svc = SFSafariViewController(url: url)
-            present(svc, animated: true, completion: nil)
+    @objc func websiteAction() {
+        if let urlWeb = URL(string: "https://" + model.website!) {
+            let safariVC = SFSafariViewController(url: urlWeb)
+            present(safariVC, animated: true, completion: nil)
         }
     }
-    
     func routeToMapView(model: Person) {
         let storyboard = UIStoryboard(name: "FriendDetail", bundle: nil)
-        if let destinationVC = storyboard.instantiateViewController(withIdentifier: "FriendLocationViewController") as? FriendLocationViewController {
+        if let destinationVC = storyboard.instantiateViewController(
+            withIdentifier: "FriendLocationViewController") as? FriendLocationViewController {
             destinationVC.person = model
             self.show(destinationVC, sender: nil)
         }

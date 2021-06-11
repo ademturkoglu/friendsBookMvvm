@@ -13,22 +13,18 @@ class FriendsListViewModel {
     var isFilteringHandler: (() -> (Bool))?
 
     private var isFetching = false
-    
     func numberOfItems() -> Int {
         associatedArray.count
     }
-
     func itemAtIndex(row: Int) -> Person? {
         associatedArray[row]
     }
-    
     func filterContent(forText text: String) {
         state.filteredItems = state.items.filter({ (content) -> Bool in
             (content.name?.lowercased().contains(text.lowercased()))!
         })
         self.changeHandler?(.friendsSucces)
     }
-    
     func fetchFriends() {
         if isFetching { return }
         isFetching = true
@@ -51,13 +47,10 @@ class FriendsListViewModel {
 }
 
 extension FriendsListViewModel {
-    
   var associatedArray: [Person] {
     isFiltering ? state.filteredItems : state.items
   }
-    
   var isFiltering: Bool {
     isFilteringHandler?() ?? false
   }
-  
 }

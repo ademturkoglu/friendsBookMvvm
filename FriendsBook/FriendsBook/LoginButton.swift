@@ -12,17 +12,14 @@ class LoginButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupButton()
     }
-    
-    func setupButton(){
+    func setupButton() {
         setShadow()
         backgroundColor = UIColor.marineBlue
         layer.cornerRadius = 27
-        
     }
     private func setShadow() {
         layer.shadowColor = UIColor.black.cgColor
@@ -30,5 +27,4 @@ class LoginButton: UIButton {
         layer.shadowOffset = CGSize(width: 0, height: 2)
         layer.shadowOpacity = 0.5
     }
-    
 }

@@ -7,18 +7,17 @@
 
 import Foundation
 
-struct User: Codable{
-    var userName: userName?
-    var password: password?
-
+struct User: Codable {
+    var userName: UserName?
+    var password: Password?
 }
 
-enum userName: String,Codable {
+enum UserName: String,Codable {
     case gbf48
     case v542w
     case zdah4
 }
 
-enum password: String, Codable {
+enum Password: String, Codable {
     case pass123
 }

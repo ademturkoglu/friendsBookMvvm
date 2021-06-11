@@ -11,9 +11,6 @@ struct LoginViewState {
     var items = [User(userName: .gbf48, password: .pass123),
             User(userName: .v542w, password: .pass123),
            User(userName: .zdah4, password: .pass123)]
-        
-    
-    
 }
 
 extension LoginViewState {

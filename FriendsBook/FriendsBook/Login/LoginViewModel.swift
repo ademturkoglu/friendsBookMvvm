@@ -10,8 +10,7 @@ import Foundation
 class LoginViewModel {
     var state = LoginViewState()
     var changeHandler: ((LoginViewState.Change) -> Void)?
-    
-    func login(userName: String?, password: String?){
+    func login(userName: String?, password: String?) {
         for user in state.items {
             if userName == user.userName?.rawValue ,
                password == user.password?.rawValue {
@@ -20,11 +19,10 @@ class LoginViewModel {
             } else {
                 self.changeHandler?(.loginError(error: LoginErrors.userNotFound))
             }
-         
         }
-   
     }
 }
+
 enum LoginErrors: Error {
     case userNotFound
 }

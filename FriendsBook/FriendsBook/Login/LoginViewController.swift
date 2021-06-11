@@ -28,9 +28,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordFieldView: UIView!
     @IBOutlet weak var hideButton: UIButton!
-    
     private var viewModel = LoginViewModel()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         userNameTextField.delegate = self
@@ -41,51 +39,42 @@ class LoginViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
     private func setupViewModel() {
         viewModel.changeHandler = { [unowned self] change in
             self.viewModelStateChanged(change: change)
         }
     }
-    
     @IBAction func hideButtonAction(_ sender: Any) {
-        if(passwordTextField.isSecureTextEntry == true){
+        if( passwordTextField.isSecureTextEntry == true ) {
                    passwordTextField.isSecureTextEntry = false
                    hideButton.setTitle("hide", for: UIControl.State.normal)
-                   
-               }else{
+               } else {
                    passwordTextField.isSecureTextEntry = true
                    hideButton.setTitle("show", for: UIControl.State.normal)
                }
     }
-    
     @IBAction func loginButtonTapped(_ sender: Any) {
         viewModel.login(userName: userNameTextField.text, password: passwordTextField.text)
     }
-    func hideKeyboard(){
-        let tab:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+    func hideKeyboard() {
+        let tab:UITapGestureRecognizer =
+            UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tab)
     }
-    
-    @objc func dismissKeyboard(){
+    @objc func dismissKeyboard() {
         view.endEditing(true)
     }
-    
-
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if (textField == userNameTextField)
-        {
+        if (textField == userNameTextField) {
             userNameTextField.resignFirstResponder()
             passwordTextField.becomeFirstResponder()
-        } else{
+        } else {
             textField.resignFirstResponder()
             viewModel.login(userName: userNameTextField.text, password: passwordTextField.text)
-            
         }
         return true
     }
-    
-    func showError(){
+    func showError() {
         self.userNameFieldView.backgroundColor = UIColor.scarlet
         self.passwordFieldView.backgroundColor = UIColor.scarlet
         self.loginButton.isUserInteractionEnabled = true
@@ -96,7 +85,6 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController: UITextFieldDelegate {
-   
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == userNameTextField {
             userNameFieldView.backgroundColor = UIColor.marineBlue
@@ -106,7 +94,6 @@ extension LoginViewController: UITextFieldDelegate {
             errorLabel.isHidden = true
         }
     }
-    
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField == userNameTextField {
             userNameFieldView.backgroundColor = UIColor.whiteTextField
@@ -115,31 +102,26 @@ extension LoginViewController: UITextFieldDelegate {
             passwordFieldView.backgroundColor = UIColor.whiteTextField
         }
     }
-    
 }
 
 extension LoginViewController {
- 
-    
     func routeToFriendsList() {
         let storyboard = UIStoryboard(name: "FriendsList", bundle: nil)
-        if let destinationVC = storyboard.instantiateViewController(withIdentifier: "FriendListViewController") as? FriendsListViewController {
-           
+        if let destinationVC = storyboard.instantiateViewController(
+            withIdentifier: "FriendListViewController") as? FriendsListViewController {
             let navController = UINavigationController(rootViewController: destinationVC)
             navController.modalPresentationStyle = .fullScreen
             self.present(navController, animated: true, completion: nil)
         }
     }
-    
-
-    private func viewModelStateChanged(change: LoginViewState.Change){
+    private func viewModelStateChanged(change: LoginViewState.Change) {
         switch change {
-        case let .fetchState(_): break
+        case .fetchState(_): break
               //  fetching ? showIndicator() : hideIndicator()
         case let .loginError(error: error):
             print(error ?? "error")
             showError()
-        case let .loginSucces:
+        case .loginSucces:
             routeToFriendsList()
         }
     }
